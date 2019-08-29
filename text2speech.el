@@ -25,7 +25,6 @@
 ;;; Code:
 
 (require 'thingatpt-utils-core)
-(require 'detect-language)
 
 (defvar ar-text2speech-local-language nil
   "Used internally when language was set resp. detected. ")
@@ -44,7 +43,7 @@
   :type 'string
   :group 'convenience)
 
-(defcustom text2speech-english-args " -v english-mb-en1 -s 120 -p 50"
+(defcustom text2speech-english-args " -v en -s 120 -p 50"
   "See man-page of `espeak' which options to specify.
 
 `espeak --voices' lists available languages"
@@ -99,7 +98,10 @@ Default is t"
       (goto-char (point-min))
       (while (search-forward "\n" nil t 1)
 	(replace-match " "))
-      (shell-command-on-region (point-min) (point-max) (concat text2speech-command text2speech-command-args)))))
+      (shell-command-on-region (point-min) (point-max)
+			       ;; "espeak -v english-mb-en1 -s 1"
+			       ;; "espeak -s 100 -p 50"
+			       (concat text2speech-command text2speech-command-args)))))
 
 (defun text2speech--find-bounds (thing)
   (let* ((bounds (cond ((eq thing 'sentence)
