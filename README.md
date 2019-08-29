@@ -1,4 +1,4 @@
-PDEE [![Build Status](https://travis-ci.org/andreas-roehler/text2speech.svg?branch=master)](https://travis-ci.org/andreas-roehler/text2speech)
+Text2Speech [![Build Status](https://travis-ci.org/andreas-roehler/text2speech.svg?branch=master)](https://travis-ci.org/andreas-roehler/text2speech)
 
 Make Emacs read loud texts for you.
 
