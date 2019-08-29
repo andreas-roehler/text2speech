@@ -1,7 +1,7 @@
 language: emacs-lisp
 
 env:
-  EMACS=emacs
+  EMACS=emacs24
 
 script:
   ./run-travis-ci.sh
