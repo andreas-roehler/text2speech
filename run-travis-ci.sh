@@ -59,7 +59,7 @@ $EMACS -Q --batch \
 }
 
 if [ $WERKSTATT -eq 0 ]; then
-    echo "Lade testumgebung \"HIER1\"";
+    echo "Lade testumgebung \"HIER1\""
     hier
 
 else
