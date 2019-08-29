@@ -55,7 +55,6 @@ $EMACS -Q --batch \
 --eval "(add-to-list 'load-path \"$TESTDIR/\")" \
 -load $TTS \
 -l $TEST1 \
-
 -f ert-run-tests-batch-and-exit
 }
 
