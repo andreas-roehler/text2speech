@@ -32,7 +32,7 @@
   :group 'convenience)
 
 
-(defvar ar-text2speech-local-language 'english
+(defvar ar-text2speech-which-language 'english
   "Used internally when language was set resp. detected. ")
 
 (defcustom text2speech-italian-args " -v italian-mbrola-6 -s 120 -p 50"
@@ -57,7 +57,7 @@
   :group 'convenience)
 
 (defun ar-text2speech-select-args ()
-  (pcase ar-text2speech-local-language
+  (pcase ar-text2speech-which-language
 	 (`english text2speech-english-args)
 	 ;; (`french text2speech-french-args)
 	 (`german text2speech-german-args)
