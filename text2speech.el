@@ -58,14 +58,14 @@
 
 (defun ar-text2speech-select-args ()
   (pcase ar-text2speech-local-language
-	 ('english text2speech-english-args)
-	 ('french text2speech-french-args)
-	 ('german text2speech-german-args)
-	 ('italien text2speech-italian-args)
-	 ('polish text2speech-polish-args)
-	 ('portoguese text2speech-portoguese-args)
-	 ('russian text2speech-russian-args)
-	 ('spanish text2speech-spanish-args)
+	 (`english text2speech-english-args)
+	 (`french text2speech-french-args)
+	 (`german text2speech-german-args)
+	 (`italien text2speech-italian-args)
+	 (`polish text2speech-polish-args)
+	 (`portoguese text2speech-portoguese-args)
+	 (`russian text2speech-russian-args)
+	 (`spanish text2speech-spanish-args)
 	 (_ text2speech-english-args)))
 
 (defalias 'tts 'ar-text2speech)
