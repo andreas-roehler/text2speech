@@ -1,0 +1,9 @@
+language: emacs-lisp
+
+env:
+  EMACS=emacs
+
+script:
+  ./run-travis-ci.sh
+
+
