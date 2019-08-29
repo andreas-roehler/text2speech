@@ -39,7 +39,7 @@ echo "\$EMACS: $EMACS"
 hier() {
     date; time -p $EMACS -Q --batch \
 --eval "(message (emacs-version))" \
---eval "(setq py-switch-p nil)" \
+--eval "(setq ar-switch-p nil)" \
 --eval "(add-to-list 'load-path \"$PDIR/\")" \
 --eval "(add-to-list 'load-path \"$TESTDIR/\")" \
 -load $TTS \
@@ -48,9 +48,9 @@ hier() {
 }
 
 entfernt() {
-$EMACS -Q --batch \
+    date; time -p $EMACS -Q --batch \
 --eval "(message (emacs-version))" \
---eval "(setq py-switch-p nil)" \
+--eval "(setq ar-switch-p nil)" \
 --eval "(add-to-list 'load-path \"$PDIR/\")" \
 --eval "(add-to-list 'load-path \"$TESTDIR/\")" \
 -load $TTS \
@@ -67,16 +67,3 @@ else
     entfernt
 fi
 
-# -l $TEST1 \
-# -l $TEST2 \
-# -l $TEST4 \
-# -l $TEST5 \
-# -l $TEST6 \
-# -l $TEST7 \
-# -l $TEST8 \
-# -l $TEST11 \
-# -l $TEST12 \
-# -l $TEST13 \
-# -l $TEST14 \
-# -l $TEST15 \
-# -l $TEST16 \
