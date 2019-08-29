@@ -1,4 +1,6 @@
-Make Emacs read loud texts for you
+PDEE [![Build Status](https://travis-ci.org/pdee/pdee.svg?branch=master)](https://travis-ci.org/pdee/pdee)
+
+Make Emacs read loud texts for you.
 
 Customizable `text2speech-command' calls the backend synthesizer
 
