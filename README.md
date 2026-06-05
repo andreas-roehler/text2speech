@@ -2,6 +2,8 @@ Text2Speech [![Build Status](https://travis-ci.org/andreas-roehler/text2speech.s
 
 Make Emacs read loud texts for you.
 
+After evaluating, just do M-x ‘read-by-sentence’ RET
+
 Customizable `text2speech-command' calls the backend synthesizer
 
 Language specific variable like `text2speech-english-args' holding
