@@ -1,6 +1,6 @@
 ;;; text2speech.el --- A simple Emacs text to speech API   -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2016-2019  Andreas Röhler
+;; Copyright (C) 2016-2026  Andreas Röhler
 
 ;; Author: Andreas Röhler <andreas.roehler@easy-emacs.de>
 ;; Keywords: convenience
@@ -20,7 +20,7 @@
 
 ;;; Commentary: Reads region loudly.
 
-;;
+;; Requires ‘espeak’
 
 ;;; Code:
 
@@ -61,7 +61,7 @@
 	 (`english text2speech-english-args)
 	 ;; (`french text2speech-french-args)
 	 (`german text2speech-german-args)
-	 ;; (`italien text2speech-italian-args)
+	 (`italien text2speech-italian-args)
 	 ;; (`polish text2speech-polish-args)
 	 ;; (`portoguese text2speech-portoguese-args)
 	 ;; (`russian text2speech-russian-args)
@@ -85,6 +85,19 @@
 				    ;; "espeak -v english-mb-en1 -s 1"
 				    ;; "espeak -s 100 -p 50"
 				    (concat text2speech-command text2speech-command-args))))))
+
+(defun read-by-sentence ()
+  "Speaks out sentence at point.
+
+At code any symbol"
+  (interactive)
+  (skip-chars-forward " \t\r\n\f")
+  (push-mark)
+  (let* ((sentence-end (or sentence-end "[.?!]* "))
+         (end-raw (save-excursion (skip-chars-forward "^ \t\r\n\f") (point)))
+         (end (max (re-search-forward sentence-end) end-raw)))
+    (ar-text2speech (mark) end)
+    (goto-char end)))
 
 (provide 'text2speech)
 ;;; text2speech.el ends here
